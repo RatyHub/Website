@@ -26,11 +26,24 @@
 
   # 2. Redirect people coming from the root to their respective language
   RewriteCond %{HTTP:Accept-Language} ^fr [NC]
-  RewriteRule ^$ fr/ [R=307,L]
+  RewriteRule ^$ /fr/ [R=307,L]
 
   # For all other languages, redirect to en/
-  RewriteRule ^$ en/ [R=307,L]
+  RewriteRule ^$ /en/ [R=307,L]
 
   # 3. Rewrite URL containing a : with _ instead of :
-  RewriteRule ^([^:]+):([^:]+)$ $1_$2 [L]
+  RewriteRule ^([^:]+)/tag:([^:]+)$ $1_$2/index.html [L]
 </IfModule>
+
+<IfModule mod_expires.c>  
+  # Turn on the module.
+  ExpiresActive on
+  # Set the default expiry times.
+  ExpiresDefault "access plus 12 month"
+  ExpiresByType text/css "access plus 2 days"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-shockwave-flash "access plus 1 month"
+  ExpiresByType image/ico "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType text/html "access plus 600 seconds"
+</IfModule>  
