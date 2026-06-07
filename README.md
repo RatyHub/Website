@@ -1,29 +1,21 @@
-# Astro Starter Kit: Minimal
+# Pokémon Workshop Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This repository contains the source code for the official [Pokémon Workshop](https://pokemonworkshop.com/) website. The site is built with [Astro](https://astro.build/), a modern static site generator / web framework.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Migration from KirbyCMS to Astro
 
-## 🚀 Project Structure
+Previously, the Pokémon Workshop website was powered by KirbyCMS. We decided to migrate to Astro due to the end of support for Kirby 3. 
 
-Inside of your Astro project, you'll see the following folders and files:
+Leaving an unsupported CMS on our server would have exposed us to potential security vulnerabilities. Upgrading to a supported version (Kirby 5) would have required purchasing a new license and dealing with complex, extensive breaking changes between Kirby 3 and Kirby 5. Ultimately, maintaining a dynamic CMS did not grant better security compared to a static HTML website.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+By moving to Astro, we generate a fully static site that:
+- Eliminates server-side execution security risks.
+- Provides superior loading speeds and performance.
+- Simplifies our hosting infrastructure.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ✍️ Adding my project page or improve a page
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+If you want to add your project page, correct an error, or improve any part of the website, we would love your help! Please refer to our [CONTRIBUTING.md](/CONTRIBUTING.md) guide for instructions on how to submit changes.
 
 ## 🧞 Commands
 
@@ -38,6 +30,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 👀 Learn More
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To learn more about Astro, check out the [Astro Documentation](https://docs.astro.build/).
