@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import { validLocale } from '../i18n';
+import { i18n, validLocale } from '../i18n';
 import Twitter from '../assets/twitter.svg';
 import Discord from '../assets/discord.svg';
 import Insta from '../assets/insta.svg';
@@ -13,6 +13,9 @@ const articlesEntry = await getPageEntry('articles', currentLocale, true);
 const learningEntry = await getPageEntry('learn', currentLocale, true);
 const helpEntry = await getPageEntry('help', currentLocale, true);
 const documentationEntry = await getPageEntry('documentation', currentLocale, true);
+const linkLabelX = await i18n('link_label_x', currentLocale);
+const linkLabelDiscord = await i18n('link_label_discord', currentLocale);
+const linkLabelInsta = await i18n('link_label_insta', currentLocale);
 ---
 
 <header>
@@ -39,9 +42,9 @@ const documentationEntry = await getPageEntry('documentation', currentLocale, tr
     </ul>
   </nav>
   <ul>
-    <li><a href="https://x.com/pokemonworkshop"><Twitter /></a></li>
-    <li><a href="https://discord.gg/0noB0gBDd91B8pMk"><Discord /></a></li>
-    <li><a href="https://instagram.com/pokemon.workshop/"><Insta /></a></li>
+    <li><a href="https://x.com/pokemonworkshop" aria-label={linkLabelX} title={linkLabelX}><Twitter /></a></li>
+    <li><a href="https://discord.gg/0noB0gBDd91B8pMk" aria-label={linkLabelDiscord} title={linkLabelDiscord}><Discord /></a></li>
+    <li><a href="https://instagram.com/pokemon.workshop/" aria-label={linkLabelInsta} title={linkLabelInsta}><Insta /></a></li>
   </ul>
 </header>
 

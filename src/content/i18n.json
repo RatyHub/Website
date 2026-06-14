@@ -1,3 +1,6 @@
 {
-  "fullLocale": { "en": "en_US", "fr": "fr_FR" }
+  "fullLocale": { "en": "en_US", "fr": "fr_FR" },
+  "link_label_x": { "en": "Pokémon Workshop on X", "fr": "Pokémon Workshop sur X" },
+  "link_label_discord": { "en": "Join Pokémon Workshop's discord", "fr": "Rejoindre le discord de Pokémon Workshop" },
+  "link_label_insta": { "en": "Pokémon Workshop on Instagram", "fr": "Pokémon Workshop sur Instagram" }
 }
