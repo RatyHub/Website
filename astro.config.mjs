@@ -18,5 +18,7 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
-  integrations: [markdoc({ allowHTML: false }), sitemap()],
+  integrations: [markdoc({ allowHTML: false }), sitemap({
+    filter: (page) => !page.includes('_')
+  })],
 });
