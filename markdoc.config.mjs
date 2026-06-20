@@ -70,6 +70,23 @@ export default defineMarkdocConfig({
       },
       render: component('./src/components/mdoc/PageRef.astro')
     },
+    video: {
+      attributes: {
+        src: {
+          type: String,
+          required: true,
+        },
+        title: {
+          type: String,
+          required: false,
+        },
+        caption: {
+          type: String,
+          required: false,
+        },
+      },
+      render: component('./src/components/mdoc/Video.astro')
+    },
     index: {
       render: component('./src/components/mdoc/Index.astro')
     },

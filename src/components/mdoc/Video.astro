@@ -1,0 +1,40 @@
+---
+interface Props {
+  src: string;
+  title?: string;
+  caption?: string;
+}
+
+const { src, title, caption } = Astro.props;
+const label = title ?? caption;
+const figCaption = caption ?? title;
+---
+
+<figure class="video-preview">
+  <video controls playsinline preload="metadata" aria-label={label}>
+    <source src={src} type="video/mp4" />
+  </video>
+  {figCaption && <figcaption>{figCaption}</figcaption>}
+</figure>
+
+<style>
+  figure.video-preview {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #000;
+  }
+
+  figcaption {
+    padding-top: 0.75rem;
+    color: #585858;
+    line-height: 1.5rem;
+  }
+</style>
