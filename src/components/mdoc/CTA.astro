@@ -3,17 +3,20 @@ interface Props {
   href: string;
   align?: 'left' | 'right' | 'center';
 }
+
+const { href, align } = Astro.props;
+const isExternal = /^https?:\/\//.test(href);
 ---
 
 {
-  Astro.props.align ? (
-    <div class={`cta-${Astro.props.align}`}>
-      <a class="cta" href={Astro.props.href}>
+  align ? (
+    <div class={`cta-${align}`}>
+      <a class="cta" href={href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>
         <slot />
       </a>
     </div>
   ) : (
-    <a class="cta" href={Astro.props.href}>
+    <a class="cta" href={href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>
       <slot />
     </a>
   )
