@@ -33,6 +33,7 @@ Whether you want to add your own fangame, share an article, improve an existing 
    npm run dev
    ```
    This will start the local server, usually at [http://localhost:4321/](http://localhost:4321/).
+   The root URL currently shows Astro's default page, so open [http://localhost:4321/en/](http://localhost:4321/en/) or [http://localhost:4321/fr/](http://localhost:4321/fr/) to browse the website locally.
 
 ---
 
